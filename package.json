@@ -1,0 +1,23 @@
+{
+  "name": "node-keyboard",
+  "version": "1.0.0",
+  "description": "application to play a keyboard in node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "node install.js"
+  },
+  "keywords": [
+    "node",
+    "keyboard",
+    "piano",
+    "music",
+    "music-theory"
+  ],
+  "author": "justin j moses",
+  "license": "ISC",
+  "dependencies": {
+    "git-clone": "^0.1.0",
+    "web-audio-api": "^0.2.2"
+  }
+}
