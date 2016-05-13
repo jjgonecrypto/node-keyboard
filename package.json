@@ -1,7 +1,7 @@
 {
   "name": "node-keyboard",
   "version": "1.0.0",
-  "description": "application to play a keyboard in node",
+  "description": "node REPL to play instruments in node, via soundfonts",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
