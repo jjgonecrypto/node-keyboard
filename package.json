@@ -2,10 +2,10 @@
   "name": "node-keyboard",
   "version": "2.0.0",
   "description": "node REPL to play instruments in node, via soundfonts",
-  "main": "lib/index.js",
+  "main": "keyboard.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "node install.js"
+    "prepublish": "node install"
   },
   "keywords": [
     "node",
@@ -14,7 +14,7 @@
     "music",
     "music-theory"
   ],
-  "author": "justin j moses",
+  "author": "justin j. moses <justinjmoses@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "chalk": "^1.1.3",

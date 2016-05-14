@@ -5,15 +5,17 @@ A REPL to play music in node. Uses the awesome soundfonts of [midi-js-soundfonts
 
 ###Run via
 
-    node lib
+    node keyboard
 
 
 ###Instructions
 
-* Enter space-separated list of notes, eg:
-    * (C Major) > `c3 e6 g7 e4`
-    * (E7) > `e3 ab4 b6 e7 d5` 
+* Apply the `play` function to a note as a string, eg:
+    * (C Major) > `['c3', 'e6', 'g7', 'e4'].forEach(play)`
+    * (E7) > `['e3', 'ab4', 'b6', 'e7', 'd5'].forEach(play)` 
 
-* Use `instruments` to see a list of available instruments
+* Use `.all` to see a list of available instruments
 
-* Use `with [instrumentName]` to switch instrument. E.g. `with guitar` or `with horn`.
+* Use `.use [instrumentName]` to switch instrument. E.g. `.use guitar` or `.use horn`.
+
+> Note: #'s aren't currently supported - you must use flats.

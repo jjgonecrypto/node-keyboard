@@ -3,8 +3,8 @@
 const repl = require('repl')
 const chalk = require('chalk')
 
-const generateContext = require('./generateContext')
-const instruments = require('./instruments')
+const generateContext = require('./lib/generateContext')
+const instruments = require('./lib/instruments')
 
 const context = generateContext()
 const allInstruments = instruments.collection()
@@ -33,7 +33,6 @@ function showInstructions() {
     console.log('>[\'c2\', \'e7\', \'g5\', \'e4\'].forEach(play)')
     console.log()
     console.log('Eb minor')
-    console.log('> eb3 gb5 bb7')
     console.log('>[\'eb3\', \'gb5\', \'bb7\', \'eb4\'].forEach(play)')
 
     console.log('---------------------------------------------------------------')
@@ -77,6 +76,3 @@ replServer.context.play = function(note) {
     instruments.get(context, currentInstrument).play(note)
     this.displayPrompt()
 }.bind(replServer)
-
-
-
