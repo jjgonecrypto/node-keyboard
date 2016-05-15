@@ -3,10 +3,8 @@
 const repl = require('repl')
 const chalk = require('chalk')
 
-const generateContext = require('./lib/generateContext')
 const instruments = require('./lib/instruments')
 
-const context = generateContext()
 const allInstruments = instruments.collection()
 
 let currentInstrument = 'acoustic_grand_piano'
@@ -34,7 +32,9 @@ function showInstructions() {
     console.log()
     console.log('Eb minor')
     console.log('>[\'eb3\', \'gb5\', \'bb7\', \'eb4\'].forEach(play)')
-
+    console.log()
+    console.log('C minor triad')
+    console.log('>[\'c2\', \'eb2\', \'g2\', \'eb2\', \'c2\'].forEach((note, i) => setTimeout(() => play(note), i * 500))')
     console.log('---------------------------------------------------------------')
     console.log('To see other instruments, type ".all"')
     console.log('---------------------------------------------------------------------------------------------------')
@@ -73,6 +73,6 @@ replServer.defineCommand('keyboard', {
 })
 
 replServer.context.play = function(note) {
-    instruments.get(context, currentInstrument).play(note)
+    instruments.get(currentInstrument).play(note)
     this.displayPrompt()
 }.bind(replServer)

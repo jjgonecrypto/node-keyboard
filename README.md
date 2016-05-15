@@ -14,6 +14,7 @@ A REPL to play music in node. Uses the awesome soundfonts of [midi-js-soundfonts
 * Apply the `play` function to a note as a string, eg:
     * (C Major) > `['c3', 'e6', 'g7', 'e4'].forEach(play)`
     * (E7) > `['e3', 'ab4', 'b6', 'e7', 'd5'].forEach(play)` 
+    * (C Minor triad) `['c2', 'eb2', 'g2', 'eb2', 'c2'].forEach((note, i) => setTimeout(() => play(note), i * 500))` 
 
 * Use `.all` to see a list of available instruments
 
