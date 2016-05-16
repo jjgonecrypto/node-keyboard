@@ -30,11 +30,11 @@ function showInstructions() {
     console.log('C Major')
     console.log('>[\'c2\', \'e7\', \'g5\', \'e4\'].forEach(play)')
     console.log()
-    console.log('Eb minor')
-    console.log('>[\'eb3\', \'gb5\', \'bb7\', \'eb4\'].forEach(play)')
+    console.log('E7')
+    console.log('>[\'e\', \'g#\', \'b\', \'d\'].forEach(play)')
     console.log()
     console.log('C minor triad')
-    console.log('>[\'c2\', \'eb2\', \'g2\', \'eb2\', \'c2\'].forEach((note, i) => setTimeout(() => play(note), i * 500))')
+    console.log('>[\'c\', \'eb\', \'g\', \'eb\', \'c\'].forEach((note, i) => setTimeout(() => play(note), i * 500))')
     console.log('---------------------------------------------------------------')
     console.log('To see other instruments, type ".all"')
     console.log('---------------------------------------------------------------------------------------------------')
@@ -45,7 +45,7 @@ function showInstructions() {
 
 showInstructions()
 
-let replServer = repl.start(getPrompt())
+let replServer = repl.start({ prompt: getPrompt(), ignoreUndefined: true })
 
 replServer.defineCommand('all', {
     help: 'node-keyboard: See all instruments',
