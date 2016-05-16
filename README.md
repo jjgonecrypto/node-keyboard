@@ -4,9 +4,13 @@ A REPL to play music in node. Uses the awesome soundfonts of [midi-js-soundfonts
 
 ![image](https://cloud.githubusercontent.com/assets/799038/15271241/2b316c46-1a0d-11e6-8a84-a2eda7ac51b6.png)
 
+###Install via
+
+    npm install -g node-keyboard
+
 ###Run via
 
-    node keyboard
+    node-keyboard
 
 
 ###Instructions
