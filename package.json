@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "node install"
+    "postinstall": "node install",
+    "start": "node keyboard"
   },
   "keywords": [
     "node",
