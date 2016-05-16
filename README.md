@@ -21,4 +21,6 @@ A REPL to play music in node. Uses the awesome soundfonts of [midi-js-soundfonts
 
 * Use `.use [instrumentName]` to switch instrument. E.g. `.use guitar` or `.use horn`.
 
-> When no octave is provided (e.g. `play('a')`) then 4th octave (`a3` 220Hz) (starting at `a0` on an 8-octave piano) is the default.
+> When no octave is provided (e.g. `play('a')`) then 3rd octave (`a3` 220Hz) (starting at `c1` on an 8-octave piano) is the default.
+
+> `a0`, `bb0` and `b0` are the only notes below `c1`

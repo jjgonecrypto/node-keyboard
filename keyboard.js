@@ -40,7 +40,6 @@ function showInstructions() {
     console.log('---------------------------------------------------------------------------------------------------')
     console.log('To change instrument, type ".use [instrument]", where [instrument] is a part of any instrument name')
     console.log('---------------------------------------------------------------------------------------------------')
-
 }
 
 showInstructions()
