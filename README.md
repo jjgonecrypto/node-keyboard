@@ -15,9 +15,9 @@ A REPL to play music in node. Uses the awesome soundfonts of [midi-js-soundfonts
 ##Functionality tl;dr
 
 * [Play notes](#play-notes) using default instrument via `play(note: String)`
-* [Explode chords](#chord) into an array of notes via `chord(name: String)` 
+* [Explode chords](#chords) into an array of notes via `chord(name: String)` 
 * [See all available instruments](#see-available-instruments) with `.all`
-* [Switch default instrument](#switch-default-instrument) with `.using instrument: String`
+* [Switch default instrument](#default-instrument) with `.using instrument: String`
 * [Map notes to an instrument](#switch-instrument-per-note) with `using(instrument: String)`
     * or play notes with instrument via `play({ note: String, instrument: String})`
 
