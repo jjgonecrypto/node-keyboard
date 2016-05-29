@@ -16,6 +16,7 @@ A REPL to play music in node. Uses the awesome soundfonts of [midi-js-soundfonts
 
 * [Play notes](#play-notes) using default instrument via `play(note: String)`
 * [Explode chords](#chords) into an array of notes via `chord(name: String)` 
+* [Project scales](#scales) into an array of notes via `scale(note: String, scale: String)`
 * [See all available instruments](#see-available-instruments) with `.all`
 * [Switch default instrument](#default-instrument) with `.using instrument: String`
 * [Map notes to an instrument](#switch-instrument-per-note) with `using(instrument: String)`
@@ -58,6 +59,21 @@ chord('g13').forEach(play)
 ```
 ![image](https://cloud.githubusercontent.com/assets/799038/15634521/26cf7ca0-2594-11e6-9f61-28b8e8fd969d.png)
 
+###Scales
+Use `scale` function to project a scale into an array of notes
+
+```javascript
+scale('a', 'harmonicminor').forEach((n,i) => setTimeout(() => play(n), 250*i))
+```
+![image](https://cloud.githubusercontent.com/assets/799038/15634682/d23d0c08-2597-11e6-98fd-b4623ee3179d.png)
+
+```javascript
+scale('g2', 'mixolydian').forEach((n,i) => setTimeout(() => play(n), 250*i))
+```
+![image](https://cloud.githubusercontent.com/assets/799038/15634692/12c8e5e4-2598-11e6-84be-4346db6c8d5a.png)
+
+> For the list of all supported scales, type `.scales`
+
 ###See Available Instruments
 Use `.all` to see a list of available instruments
 
@@ -88,3 +104,8 @@ Apply the `using` map function to change instrument on a chord
 2. `a0`, `bb0` (`a#0`) and `b0` are the only notes below `c1`
 
 3. Double-sharp is denoted with `x` as in `ax3` (enharmonically `b3`). Double-flat is denoted with `bb` as in `bbb3` (enharmonically `a3`)
+
+###Acknowledgements
+
+* The fantastic [midi-js-soundfonts](https://github.com/gleitz/midi-js-soundfonts) library for all the underlying recordings
+* The stunning [teoria library](https://github.com/saebekassebil/teoria) for note, chord and scale support
