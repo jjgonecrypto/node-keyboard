@@ -4,13 +4,22 @@ A REPL to play music in node. Uses the awesome soundfonts of [midi-js-soundfonts
 
 ![image](https://cloud.githubusercontent.com/assets/799038/15515842/0786779c-21be-11e6-9e34-78c05c179b7f.png)
 
-###Install via
+##Install via
 
     npm install -g node-keyboard
 
-###Run via
+##Run via
 
     node-keyboard
+
+##Functionality tl;dr
+
+* [Play notes](#play-notes) using default instrument via `play(note: String)`
+* [Explode chords](#chord) into an array of notes via `chord(name: String)` 
+* [See all available instruments](#see-available-instruments) with `.all`
+* [Switch default instrument](#switch-default-instrument) with `.using instrument: String`
+* [Map notes to an instrument](#switch-instrument-per-note) with `using(instrument: String)`
+    * or play notes with instrument via `play({ note: String, instrument: String})`
 
 ###Play Notes
 
@@ -35,6 +44,19 @@ Apply the `play` function to a note as a string, eg:
 ['c2', 'eb2', 'g2', 'eb2', 'c2'].forEach((note, i) => setTimeout(() => play(note), i * 500)) // cm triad
 ```
 ![image](https://cloud.githubusercontent.com/assets/799038/15515393/013e2a80-21bc-11e6-8819-553e5f835fce.png)
+
+###Chords
+Use `chord` function to explode a chord into an array of notes
+
+```javascript
+chord('fdim7').forEach(play)
+```
+![image](https://cloud.githubusercontent.com/assets/799038/15634513/018c8d52-2594-11e6-9315-b390b1c6e637.png)
+
+```javascript
+chord('g13').forEach(play)
+```
+![image](https://cloud.githubusercontent.com/assets/799038/15634521/26cf7ca0-2594-11e6-9f61-28b8e8fd969d.png)
 
 ###See Available Instruments
 Use `.all` to see a list of available instruments
