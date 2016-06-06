@@ -1,6 +1,6 @@
 {
   "name": "node-keyboard",
-  "version": "2.5.4",
+  "version": "2.5.5",
   "description": "node REPL to play instruments in node, via soundfonts",
   "main": "keyboard.js",
   "bin": {
