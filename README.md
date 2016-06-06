@@ -15,6 +15,7 @@ A REPL to play music in node. Uses the awesome soundfonts of [midi-js-soundfonts
 ##Functionality tl;dr
 
 * [Play notes](#play-notes) using default instrument via `play(note: String)`
+* [Delay playing](#delay-playing) by mapping via `every(interval: Number)`
 * [Explode chords](#chords) into an array of notes via `chord(name: String)` 
 * [Project scales](#scales) into an array of notes via `scale(note: String, scale: String)`
 * [See all available instruments](#see-available-instruments) with `.all`
@@ -41,10 +42,13 @@ Apply the `play` function to a note as a string, eg:
 ```
 ![image](https://cloud.githubusercontent.com/assets/799038/15515362/d3c5f7fe-21bb-11e6-8a97-815e79b0fa16.png)
 
+###Delay Playing
+Map with `every` function to delay playing
+
 ```javascript
-['c2', 'eb2', 'g2', 'eb2', 'c2'].forEach((note, i) => setTimeout(() => play(note), i * 500)) // cm triad
+['f#3', 'a#4', 'c#5', 'f#6'].map(every(500)).forEach(play) // F# triad
 ```
-![image](https://cloud.githubusercontent.com/assets/799038/15515393/013e2a80-21bc-11e6-8819-553e5f835fce.png)
+![image](https://cloud.githubusercontent.com/assets/799038/15809361/72daa588-2b5d-11e6-81e3-cc7631cf00f7.png)
 
 ###Chords
 Use `chord` function to explode a chord into an array of notes
@@ -63,14 +67,14 @@ chord('g13').forEach(play)
 Use `scale` function to project a scale into an array of notes
 
 ```javascript
-scale('a', 'harmonicminor').forEach((n,i) => setTimeout(() => play(n), 250*i))
+scale('a', 'harmonicminor').map(every(250)).forEach(play)
 ```
-![image](https://cloud.githubusercontent.com/assets/799038/15634682/d23d0c08-2597-11e6-98fd-b4623ee3179d.png)
+![image](https://cloud.githubusercontent.com/assets/799038/15809318/62a82718-2b5c-11e6-9e84-884d6f79315e.png)
 
 ```javascript
-scale('g2', 'mixolydian').forEach((n,i) => setTimeout(() => play(n), 250*i))
+scale('g2', 'mixolydian').map(every(500)).forEach(play)
 ```
-![image](https://cloud.githubusercontent.com/assets/799038/15634692/12c8e5e4-2598-11e6-84be-4346db6c8d5a.png)
+![image](https://cloud.githubusercontent.com/assets/799038/15809322/9005448e-2b5c-11e6-978d-0487f689b12c.png)
 
 > For the list of all supported scales, type `.scales`
 
@@ -99,7 +103,7 @@ Apply the `using` map function to change instrument on a chord
 
 ###FAQ
 
-1. When no octave is provided (e.g. `play('a')`) then 3rd octave (`a3` 220Hz) (starting at `c1` on an 8-octave piano) is the default.
+1. When no octave is provided (e.g. `play('a')`) then 3rd octave (`a3` 220Hz) (starting at `c3` on an 8-octave piano) is the default.
 
 2. `a0`, `bb0` (`a#0`) and `b0` are the only notes below `c1`
 
