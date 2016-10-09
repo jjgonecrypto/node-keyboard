@@ -1,6 +1,6 @@
 #node-keyboard
 
-A REPL to play music in node. Uses the awesome soundfonts of [midi-js-soundfonts](https://github.com/gleitz/midi-js-soundfonts). 
+A REPL to play music in node. Uses the awesome soundfonts of [midi-js-soundfonts](https://github.com/gleitz/midi-js-soundfonts). Even supports MIDI input.
 
 ![image](https://cloud.githubusercontent.com/assets/799038/15515842/0786779c-21be-11e6-9e34-78c05c179b7f.png)
 
