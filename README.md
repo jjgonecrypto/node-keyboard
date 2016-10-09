@@ -1,8 +1,8 @@
 #node-keyboard
 
-A REPL to play music in node. Uses the awesome soundfonts of [midi-js-soundfonts](https://github.com/gleitz/midi-js-soundfonts). Even supports MIDI input.
+A REPL to play music in node. Uses the awesome soundfonts of [midi-js-soundfonts](https://github.com/gleitz/midi-js-soundfonts). Supports MIDI input.
 
-![image](https://cloud.githubusercontent.com/assets/799038/15515842/0786779c-21be-11e6-9e34-78c05c179b7f.png)
+![](https://media.giphy.com/media/l0MYPIsEjIrUFYNs4/giphy.gif)
 
 ##Install via
 
@@ -11,6 +11,17 @@ A REPL to play music in node. Uses the awesome soundfonts of [midi-js-soundfonts
 ##Run via
 
     node-keyboard
+
+##Releases
+
+[![npm version](https://badge.fury.io/js/node-keyboard.svg)](https://badge.fury.io/js/node-keyboard)
+
+* ~~(see [commit log](https://github.com/justinjmoses/node-keyboard/commits/master) for earlier releases)~~
+* ~~`2.5.0` Support for switching instruments~~
+* ~~`2.5.5` Adding `every`~~
+* ~~`2.6.0` Persistent history for the REPL~~
+    * ~~`2.6.1` Adding eslint and ensuring `play` returns input~~
+* ~~`2.7.0` Support for MIDI input~~
 
 ##Functionality tl;dr
 
