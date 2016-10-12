@@ -22,7 +22,7 @@
   "license": "ISC",
   "repository": "https://github.com/justinjmoses/node-keyboard",
   "engines": {
-    "node": ">=4.2.0"
+    "node": ">=6.0.0"
   },
   "dependencies": {
     "chalk": "1.1.3",
