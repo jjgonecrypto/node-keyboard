@@ -28,7 +28,7 @@
     "chalk": "1.1.3",
     "git-clone": "0.1.0",
     "midi": "^0.9.5",
-    "play-sound": "https://github.com/justinjmoses/play-sound/tarball/3ada742beabadbd17cd96dc0e1b09104cabfb4f5",
+    "play-sound": "^1.0.0",
     "teoria": "2.2.0"
   }
 }
