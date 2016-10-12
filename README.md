@@ -22,7 +22,7 @@ A REPL to play music in node. Uses the awesome soundfonts of [midi-js-soundfonts
 * ~~`2.6.0` Persistent history for the REPL~~
     * ~~`2.6.1` Adding eslint and ensuring `play` returns input~~
 * ~~`2.7.0` Support for MIDI input~~
-    * ~~`2.7.2` Support for notes as first-class objects~~ 
+* ~~`2.8.0` Support for notes as first-class objects (Symbol-like)~~ 
 
 ##Functionality tl;dr
 
