@@ -23,9 +23,11 @@ A REPL to play music in node. Uses the awesome soundfonts of [midi-js-soundfonts
     * ~~`2.6.1` Adding eslint and ensuring `play` returns input~~
 * ~~`2.7.0` Support for MIDI input~~
 * ~~`2.8.0` Support for notes as first-class objects (Symbol-like)~~ 
+* ~~`2.9.0` Support for midi streams: `midiIn`, `toRepl`, `toAudio` and `toPiano`~~
 
 ##Functionality tl;dr
 
+* [MIDI In](#midi-in) support by `midiIn.pipe(toAudio)`
 * [Play notes](#play-notes) using default instrument via `play(note: String|Symbol)` 
 * [Delay playing](#delay-playing) by mapping via `every(interval: Number)`
 * [Explode chords](#chords) into an array of notes via `chord(name: String)` 
@@ -34,6 +36,39 @@ A REPL to play music in node. Uses the awesome soundfonts of [midi-js-soundfonts
 * [Switch default instrument](#default-instrument) with `.using instrument: String`
 * [Map notes to an instrument](#switch-instrument-per-note) with `using(instrument: String)`
     * or play notes with instrument via `play({ note: String|Symbol, instrument: String})`
+
+###MIDI In
+
+Pipe the `midiIn` stream to a number of writable outputs.
+
+`toAudio` will play the notes
+
+```javascript
+midiIn.pipe(toAudio)
+```
+![toaudio](https://cloud.githubusercontent.com/assets/799038/19413555/987fd1f6-92fe-11e6-8349-1b667b98d3c5.gif)
+
+`toRepl` will output the notes in the REPL
+
+```javascript
+midiIn.pipe(toRepl)
+```
+![torepl](https://cloud.githubusercontent.com/assets/799038/19413562/006e96da-92ff-11e6-85b7-265a954c7d91.gif)
+
+`toPiano` will draw the piano for each note played
+
+```javascript
+midiIn.pipe(toPiano)
+```
+![topiano](https://cloud.githubusercontent.com/assets/799038/19413569/2351c42e-92ff-11e6-9f42-110eeec316ff.gif)
+
+Or pipe them through each other
+`midiIn.pipe(toAudio).pipe(toPiano)`
+
+And remove them just as easily
+`midiIn.unpipe(toAudio).unpipe(toPiano)` (or unpipe all via `unpipeAll()`)
+
+> Note: To function, your MIDI device must be on when node starts
 
 ###Play Notes
 

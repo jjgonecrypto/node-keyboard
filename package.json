@@ -29,6 +29,7 @@
     "git-clone": "0.1.0",
     "midi": "^0.9.5",
     "play-sound": "^1.0.0",
+    "robotjs": "^0.4.4",
     "teoria": "2.2.0"
   }
 }
