@@ -60,7 +60,7 @@ midiIn.pipe(toRepl)
 ```javascript
 midiIn.pipe(toPiano)
 ```
-![topiano](https://cloud.githubusercontent.com/assets/799038/19413569/2351c42e-92ff-11e6-9f42-110eeec316ff.gif)
+![topiano](https://cloud.githubusercontent.com/assets/799038/19414500/edf886e6-931c-11e6-88c1-2a9adb452c87.gif)
 
 Or pipe them through each other
 `midiIn.pipe(toAudio).pipe(toPiano)`
