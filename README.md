@@ -97,6 +97,12 @@ Map with `every` function to delay playing
 ```
 ![triad](https://cloud.githubusercontent.com/assets/799038/19295213/029745e8-9001-11e6-86a0-b981e30d4ae8.gif)
 
+Alternatively for streams, `withDelay([...])` will return a transform stream that will emit after the given delays (where the delays are cycled)
+
+```javascript
+midiIn.pipe(withDelay([500, 250, 250])).pipe(toAudio)
+```
+
 ###Chords
 Use `chord` function to explode a chord into an array of notes
 
