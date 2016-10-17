@@ -29,8 +29,7 @@ A REPL where music is simply streams of input in node. Uses the awesome soundfon
 ##Functionality tl;dr
 
 * [MIDI In](#midi-in) support by `midiIn`
-* Create a stream of notes using `fromArray`
-* [Play notes](#play-notes) using default instrument via `fromArray([c, e, g]).pipe(toAudio())` 
+* [Create a stream](#create-a-stream) of notes using `fromArray`
 * [Delay playing](#delay) across a cycle of intervals via `.pipe(withDelay([...]))`
 
 **Legacy array functionality**
@@ -50,28 +49,25 @@ Pipe the `midiIn` stream to a number of writable outputs. (*To function, your MI
 ```javascript
 midiIn.pipe(toAudio())
 ```
-![toaudio](https://cloud.githubusercontent.com/assets/799038/19413555/987fd1f6-92fe-11e6-8349-1b667b98d3c5.gif)
 
 `toRepl()` will output the notes in the REPL
 
 ```javascript
 midiIn.pipe(toRepl())
 ```
-![torepl](https://cloud.githubusercontent.com/assets/799038/19413562/006e96da-92ff-11e6-85b7-265a954c7d91.gif)
 
 `toPiano()` will draw the piano for each note played
 
 ```javascript
 midiIn.pipe(toPiano())
 ```
-![topiano](https://cloud.githubusercontent.com/assets/799038/19414500/edf886e6-931c-11e6-88c1-2a9adb452c87.gif)
 
 Or pipe them through each other
 `midiIn.pipe(toPiano()).pipe(toAudio())`
 
 And remove from MIDI input via `midiIn.unpipe()`
 
-> Note: 
+![midis](https://cloud.githubusercontent.com/assets/799038/19424671/22718940-93f9-11e6-90fe-e0a6f8891299.gif)
 
 ###Create a Stream
 Create a stream of notes from an array using `fromArray` (supports notes as variables)
