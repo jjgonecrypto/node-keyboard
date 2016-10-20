@@ -49,10 +49,10 @@ And remove from MIDI input via `midiIn.unpipe()`
 ![midis](https://cloud.githubusercontent.com/assets/799038/19424671/22718940-93f9-11e6-90fe-e0a6f8891299.gif)
 
 ###Create a Stream
-Create a stream of notes from an array using `from` (supports notes as variables), and limit by `take`.
+Create an [infinite] stream of notes from an array using `from` (supports notes as variables).
 
 ```javascript
-from(c, e, g).pipe(take(3)).pipe(toAudio())
+from(c, e, g).pipe(toAudio()) // Hit CTRL+C (SIGINT) to unpipe immediately
 ```
 
 > Note: supports all notes A0 to Cs8/Db8 (Cs8 is the syntax-friendly version of 'C#8')
