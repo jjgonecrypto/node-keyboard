@@ -64,10 +64,17 @@ from(c, e, g).pipe(toAudio()) // Hit CTRL+C (SIGINT) to unpipe immediately
 > Note: supports all notes A0 to Cs8/Db8 (Cs8 is the syntax-friendly version of 'C#8')
 
 ###Delay
-Use `withDelay([...])` to return a transform stream that will emit after the given delays (where the delays are cycled)
+Use `delay(...args)` to return a transform stream that will emit after the given delays (where the delays are cycled)
 
 ```javascript
-from(c1, g1, c2, g2, c3, g3).pipe(withDelay([250, 250, 500])).pipe(toAudio())
+from(c1, g1, c2, g2, c3, g3).pipe(delay(250, 250, 500)).pipe(toAudio())
+```
+
+###With instrument
+Use `on(instrument)` to return a transform stream that will ensure the given instrument is used.
+
+```javascript
+from(c,e,g).pipe(on('guitar')).pipe(delay(200)).pipe(toAudio())
 ```
 
 > Note: Breaking via CTRL+C will stop the stream by unpiping **everything**
@@ -86,6 +93,7 @@ from(c1, g1, c2, g2, c3, g3).pipe(withDelay([250, 250, 500])).pipe(toAudio())
 * ~~`2.9.0` Support for midi streams: `midiIn`, `toRepl`, `toAudio` and `toPiano`~~
 * ~~`3.0.0` Upgraded to stream-first, all stream variables are now factory functions (to reuse). Support for fromArray. Deprecated older array functionality.~~
 * ~~`3.1.0` Renamed `fromArray` to `from`, allow `from` to continue forever, limited `withDelay` to have a highWaterMark of 1 and play first immediately, brought in SIGINT support to unpipe streams when CTRL+C pressed~~
+* ~~`3.2.0` Renamed `withDelay` to `delay`. Added `toLogger`. Added `on` to play instruments.~~
 
 ###FAQ
 
