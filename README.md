@@ -41,6 +41,12 @@ midiIn.pipe(toRepl())
 midiIn.pipe(toPiano())
 ```
 
+`toLogger()` will console log the note (pipe after `toAudio()` to see more information about the played note)
+
+```javascript
+midiIn.pipe(toLogger())
+```
+
 Or pipe them through each other
 `midiIn.pipe(toPiano()).pipe(toAudio())`
 
