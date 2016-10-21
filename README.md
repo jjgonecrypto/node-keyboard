@@ -18,7 +18,8 @@ A REPL where music is simply streams of input in node. Uses the awesome soundfon
 
 * [MIDI In](#midi-in) support by `midiIn`, pipe to audio via `.pipe(toAudio())`
 * [Create a stream](#create-a-stream) of notes using `from`
-* [Delay playing](#delay) across a cycle of intervals via `.pipe(withDelay([...]))`
+* [Delay playing](#delay) across a cycle of intervals via `.pipe(delay(...))`
+* [Select instrument](#with-instrument) or play with a random one via `.pipe(on(...))`
 
 ###MIDI In
 Pipe the `midiIn` stream to a number of writable outputs. (*To function, your MIDI device must be on when node starts.*)
@@ -70,7 +71,7 @@ Use `delay(...args)` to return a transform stream that will emit after the given
 from(c1, g1, c2, g2, c3, g3).pipe(delay(250, 250, 500)).pipe(toAudio())
 ```
 
-###With instrument
+###With Instrument
 Use `on(instrument)` to return a transform stream that will ensure the given instrument is used.
 
 ```javascript
@@ -78,6 +79,20 @@ from(c,e,g).pipe(on('guitar')).pipe(delay(200)).pipe(toAudio())
 ```
 
 > Note: Breaking via CTRL+C will stop the stream by unpiping **everything**
+
+###Known Issues
+* Reusing a stream and repiping it through transformers
+E.g. 
+```javascript
+let guitar = from(c,e,g).pipe(on('guitar')).pipe(delay(200))
+guitar.pipe(toAudio()) 
+// CTRL+C
+guitar.pipe(toAudio()) // works
+// CTRL+C
+guitar.pipe(on()).pipe(toAudio()) // works first time only
+// CTRL+C
+guitar.pipe(on()).pipe(toAudio()) // won't play the guitar stream's final on() is still piped to the previous on()
+```
 
 -------
 
