@@ -29,7 +29,7 @@
     "git-clone": "0.1.0",
     "lodash.shuffle": "^4.2.0",
     "midi": "^0.9.5",
-    "play-sound": "https://github.com/justinjmoses/play-sound/tarball/ff015fecca8fb274275695e83956f748e4f04ce3",
+    "play-sound": "^1.1.1",
     "robotjs": "^0.4.4",
     "teoria": "2.2.0"
   }
