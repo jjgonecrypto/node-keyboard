@@ -14,7 +14,7 @@ A REPL where music is simply streams of input in node. Uses the awesome soundfon
 
     node-keyboard
 
-##Functionality tl;dr
+##Streaming Functionality tl;dr
 
 * [MIDI In](#midi-in) support by `midiIn`, pipe to audio via `.pipe(toAudio())`
 * [Create a stream](#create-a-stream) of notes using `from`
@@ -80,7 +80,52 @@ from(c,e,g).pipe(on('guitar')).pipe(delay(200)).pipe(toAudio())
 
 > Note: Breaking via CTRL+C will stop the stream by unpiping **everything**
 
-###Known Issues
+##Functionality (sans streams)
+Functionality, without the streams.
+
+###Properties
+* `instruments` list all instruments available
+* `scales` list all scales supported
+
+###Side effects
+* `play(note)` plays a note.
+Eg.
+```javascript
+[c,e,g].forEach(play)
+```
+ 
+###Projections
+* `chord(name)` projects a chord name out to an array of notes. 
+Eg.
+```javascript
+chord('cm9')
+// [ 'c4', 'eb4', 'g4', 'bb4', 'd5' ]
+```
+
+* `scale(note, name)` projects a note through the named scale
+Eg.
+```javascript
+scale('a', 'flamenco')
+// [ 'a5', 'bb5', 'c#6', 'd6', 'e6', 'f6', 'g#6' ]
+```
+
+###Functors
+* `instrument([name]])` returns mapping function to play on instrument. If no parameter provided it chooses a random instrument.
+Eg.: 
+```javascript
+[c,e,g].map(instrument('guitar')).forEach(play)
+```
+
+* `interval(...intervals)` returns mapping function to project intervals.
+Eg. 
+```javascript
+[c,e,g].map(interval('P1','P5')).reduce((acc, cur) => acc.concat(cur), [])
+// [ 'c3', 'g3', 'e3', 'b3', 'g3', 'd4' ]
+```
+
+-------
+
+##Known Issues
 * Reusing a stream and repiping it through transformers
 E.g. 
 ```javascript
@@ -109,6 +154,7 @@ guitar.pipe(on()).pipe(toAudio()) // won't play the guitar stream's final on() i
 * ~~`3.0.0` Upgraded to stream-first, all stream variables are now factory functions (to reuse). Support for fromArray. Deprecated older array functionality.~~
 * ~~`3.1.0` Renamed `fromArray` to `from`, allow `from` to continue forever, limited `withDelay` to have a highWaterMark of 1 and play first immediately, brought in SIGINT support to unpipe streams when CTRL+C pressed~~
 * ~~`3.2.0` Renamed `withDelay` to `delay`. Added `toLogger`. Added `on` to play instruments.~~
+* ~~`3.3.0` Added base functions `chord()`, `scale`,  functors `instrument()` anf `interval()`, and properties `instruments` and `scales`. Many bug fixes.~~
 
 ###FAQ
 
