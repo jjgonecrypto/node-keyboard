@@ -16,7 +16,7 @@ A REPL where music is simply streams of input in node. Uses the awesome soundfon
 
 ##Streaming Functionality tl;dr
 
-* [MIDI In](#midi-in) support by `midiIn`, pipe to audio via `.pipe(toAudio())`
+* [MIDI In](#midi-in) support by `midiIn`, pipe to audio via `.pipe(toAudio)`
 * [Create a stream](#create-a-stream) of notes using `from`
 * [Delay playing](#delay) across a cycle of intervals via `.pipe(delay(...))`
 * [Select instrument](#with-instrument) or play with a random one via `.pipe(on(...))`
@@ -24,32 +24,32 @@ A REPL where music is simply streams of input in node. Uses the awesome soundfon
 ###MIDI In
 Pipe the `midiIn` stream to a number of writable outputs. (*To function, your MIDI device must be on when node starts.*)
 
-`toAudio()` will play the notes
+`toAudio` will play the notes
 
 ```javascript
-midiIn.pipe(toAudio())
+midiIn.pipe(toAudio)
 ```
 
-`toRepl()` will output the notes in the REPL
+`toRepl` will output the notes in the REPL
 
 ```javascript
-midiIn.pipe(toRepl())
+midiIn.pipe(toRepl)
 ```
 
-`toPiano()` will draw the piano for each note played
+`toPiano` will draw the piano for each note played
 
 ```javascript
-midiIn.pipe(toPiano())
+midiIn.pipe(toPiano)
 ```
 
-`toLogger()` will console log the note (pipe after `toAudio()` to see more information about the played note)
+`toLogger` will console log the note (pipe after `toAudio` to see more information about the played note)
 
 ```javascript
-midiIn.pipe(toLogger())
+midiIn.pipe(toLogger)
 ```
 
 Or pipe them through each other
-`midiIn.pipe(toPiano()).pipe(toAudio())`
+`midiIn.pipe(toPiano).pipe(toAudio)`
 
 And remove from MIDI input via `midiIn.unpipe()`
 
@@ -59,7 +59,7 @@ And remove from MIDI input via `midiIn.unpipe()`
 Create an [infinite] stream of notes from an array using `from` (supports notes as variables).
 
 ```javascript
-from(c, e, g).pipe(toAudio()) // Hit CTRL+C (SIGINT) to unpipe immediately
+from(c, e, g).pipe(toAudio) // Hit CTRL+C (SIGINT) to unpipe immediately
 ```
 
 > Note: supports all notes A0 to Cs8/Db8 (Cs8 is the syntax-friendly version of 'C#8')
@@ -68,14 +68,14 @@ from(c, e, g).pipe(toAudio()) // Hit CTRL+C (SIGINT) to unpipe immediately
 Use `delay(...args)` to return a transform stream that will emit after the given delays (where the delays are cycled)
 
 ```javascript
-from(c1, g1, c2, g2, c3, g3).pipe(delay(250, 250, 500)).pipe(toAudio())
+from(c1, g1, c2, g2, c3, g3).pipe(delay(250, 250, 500)).pipe(toAudio)
 ```
 
 ###With Instrument
 Use `on(instrument)` to return a transform stream that will ensure the given instrument is used.
 
 ```javascript
-from(c,e,g).pipe(on('guitar')).pipe(delay(200)).pipe(toAudio())
+from(c,e,g).pipe(on('guitar')).pipe(delay(200)).pipe(toAudio)
 ```
 
 > Note: Breaking via CTRL+C will stop the stream by unpiping **everything**
@@ -130,13 +130,13 @@ Eg.
 E.g. 
 ```javascript
 let guitar = from(c,e,g).pipe(on('guitar')).pipe(delay(200))
-guitar.pipe(toAudio()) 
+guitar.pipe(toAudio) 
 // CTRL+C
-guitar.pipe(toAudio()) // works
+guitar.pipe(toAudio) // works
 // CTRL+C
-guitar.pipe(on()).pipe(toAudio()) // works first time only
+guitar.pipe(on()).pipe(toAudio) // works first time only
 // CTRL+C
-guitar.pipe(on()).pipe(toAudio()) // won't play the guitar stream's final on() is still piped to the previous on()
+guitar.pipe(on()).pipe(toAudio) // won't play the guitar stream's final on() is still piped to the previous on()
 ```
 
 -------
@@ -155,6 +155,7 @@ guitar.pipe(on()).pipe(toAudio()) // won't play the guitar stream's final on() i
 * ~~`3.1.0` Renamed `fromArray` to `from`, allow `from` to continue forever, limited `withDelay` to have a highWaterMark of 1 and play first immediately, brought in SIGINT support to unpipe streams when CTRL+C pressed~~
 * ~~`3.2.0` Renamed `withDelay` to `delay`. Added `toLogger`. Added `on` to play instruments.~~
 * ~~`3.3.0` Added base functions `chord()`, `scale`,  functors `instrument()` anf `interval()`, and properties `instruments` and `scales`. Many bug fixes.~~
+* ~~`3.4.0` Migrated to using getters for writable streams for brevity~~
 
 ###FAQ
 
