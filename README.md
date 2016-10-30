@@ -123,6 +123,11 @@ Eg.
 // [ 'c3', 'g3', 'e3', 'b3', 'g3', 'd4' ]
 ```
 
+* `only(...numbers)` returns filter predicate to filter out to required interval positions.
+Eg.
+```javascript
+scale(c, 'major').filter(only(1,3,5,7)).map(play) // Cmaj7
+```
 -------
 
 ##Known Issues
