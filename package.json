@@ -28,7 +28,7 @@
     "chalk": "1.1.3",
     "git-clone": "0.1.0",
     "lodash.shuffle": "^4.2.0",
-    "midi": "https://github.com/justinjmoses/node-midi/tarball/b4e9ba6b93a20be456327311f78d296914ca7c6d",
+    "midi": "^0.9.5",
     "play-sound": "^1.1.1",
     "robotjs": "^0.4.4",
     "rxjs": "^5.0.0-rc.1",
