@@ -161,6 +161,7 @@ guitar.pipe(on()).pipe(toAudio) // won't play the guitar stream's final on() is 
 * ~~`3.2.0` Renamed `withDelay` to `delay`. Added `toLogger`. Added `on` to play instruments.~~
 * ~~`3.3.0` Added base functions `chord()`, `scale`,  functors `instrument()` anf `interval()`, and properties `instruments` and `scales`. Many bug fixes.~~
 * ~~`3.4.0` Migrated to using getters for writable streams for brevity~~
+* ~~`3.5.0` Support for `only()`~~
 
 ###FAQ
 
