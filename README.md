@@ -109,6 +109,13 @@ scale('a', 'flamenco')
 // [ 'a5', 'bb5', 'c#6', 'd6', 'e6', 'f6', 'g#6' ]
 ```
 
+* `sequence(note, ...semitones)` projects a note through the given semitone sequence
+Eg.
+```javascript
+sequence(c, 2, 1, 2, 2, 1, 2, 2) // c minor scale
+// [ 'c3', 'd3', 'eb3', 'f3', 'g3', 'g#3', 'a#3', 'c4' ]
+```
+
 ###Functors
 * `instrument([name]])` returns mapping function to play on instrument. If no parameter provided it chooses a random instrument.
 Eg.: 
