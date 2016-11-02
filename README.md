@@ -93,7 +93,13 @@ Eg.
 ```javascript
 [c,e,g].forEach(play)
 ```
- 
+
+* `piano(note)` draws the piano playing that note
+Eg.
+```javascript
+[c,e,g].forEach((note, i) => setTimeout(() => piano(note), 400 * i))
+```
+
 ###Projections
 * `chord(name)` projects a chord name out to an array of notes. 
 Eg.
