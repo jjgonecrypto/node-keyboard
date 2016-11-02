@@ -141,6 +141,17 @@ Eg.
 ```javascript
 scale(c, 'major').filter(only(1,3,5,7)).map(play) // Cmaj7
 ```
+
+###Utility
+* `runInThisContext(code)` runs the code string in the current context, allowing for external scripts to run.
+Eg.
+```javascript
+runInThisContext(require('./cmajor'))()
+
+// where cmajor.js might be
+module.exports = () => from(c,e,g).pipe(delay(500)).pipe(toAudio)
+```
+
 -------
 
 ##Known Issues
@@ -175,6 +186,7 @@ guitar.pipe(on()).pipe(toAudio) // won't play the guitar stream's final on() is 
 * ~~`3.3.0` Added base functions `chord()`, `scale`,  functors `instrument()` anf `interval()`, and properties `instruments` and `scales`. Many bug fixes.~~
 * ~~`3.4.0` Migrated to using getters for writable streams for brevity~~
 * ~~`3.5.0` Support for `only()`~~
+* ~~`3.6.0` Subscription removal on SIGINT for Rx, support for `piano` function, support for `runInThisContext`, and stream getter bugfix~~
 
 ###FAQ
 
