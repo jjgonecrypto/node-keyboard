@@ -100,6 +100,12 @@ Eg.
 [c,e,g].forEach((note, i) => setTimeout(() => piano(note), 400 * i))
 ```
 
+* `log(note)` logs the note to `stdout`. (Includes the instrument if chained after `play`)
+Eg.
+```javascript
+[f,a,c].map(play).forEach(log)
+```
+
 ###Projections
 * `chord(name)` projects a chord name out to an array of notes. 
 Eg.
@@ -142,16 +148,6 @@ Eg.
 scale(c, 'major').filter(only(1,3,5,7)).map(play) // Cmaj7
 ```
 
-###Utility
-* `runInThisContext(code)` runs the code string in the current context, allowing for external scripts to run.
-Eg.
-```javascript
-runInThisContext(require('./cmajor'))()
-
-// where cmajor.js might be
-module.exports = () => from(c,e,g).pipe(delay(500)).pipe(toAudio)
-```
-
 -------
 
 ##Known Issues
@@ -187,6 +183,7 @@ guitar.pipe(on()).pipe(toAudio) // won't play the guitar stream's final on() is 
 * ~~`3.4.0` Migrated to using getters for writable streams for brevity~~
 * ~~`3.5.0` Support for `only()`~~
 * ~~`3.6.0` Subscription removal on SIGINT for Rx, support for `piano` function, support for `runInThisContext`, and stream getter bugfix~~
+* ~~`3.7.0` Support for `log` function, removal of `runInThisContext` (not necessary)~~
 
 ###FAQ
 
