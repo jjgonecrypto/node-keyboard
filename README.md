@@ -51,9 +51,9 @@ midiIn.pipe(toLogger)
 Or pipe them through each other
 `midiIn.pipe(toPiano).pipe(toAudio)`
 
-And remove from MIDI input via `midiIn.unpipe()`
+And remove from MIDI input via `midiIn.unpipe()` (or `CTRL`+`C`)
 
-![midis](https://cloud.githubusercontent.com/assets/799038/19424671/22718940-93f9-11e6-90fe-e0a6f8891299.gif)
+![node-keyboard](https://cloud.githubusercontent.com/assets/799038/20159751/b75032b8-a6b0-11e6-92ed-6b91814647f3.gif)
 
 ###Create a Stream
 Create an [infinite] stream of notes from an array using `from` (supports notes as variables).
