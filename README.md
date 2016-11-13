@@ -153,6 +153,12 @@ scale(c, 'major').filter(only(1,3,5,7)).map(play) // Cmaj7
 
 -------
 
+##Plugins
+
+* RxJS support and examples at https://github.com/justinjmoses/node-keyboard-rx
+
+-------
+
 ##Known Issues
 * Reusing a stream and repiping it through transformers
 E.g. 
