@@ -188,7 +188,7 @@ guitar.pipe(on()).pipe(toAudio) // won't play the guitar stream's final on() is 
 * ~~`3.6.0` Subscription removal on SIGINT for Rx, support for `piano` function, support for `runInThisContext`, and stream getter bugfix~~
 * ~~`3.7.0` Support for `log` function, removal of `runInThisContext` (not necessary)~~
 * ~~`3.8.0` Errors no longer thrown, just shown. Support for examples~~
-* ~~`3.9.0` Removed Rx support and [turned it into a plugin])https://github.com/justinjmoses/node-keyboard-rx)~~
+* ~~`3.9.0` Removed Rx support and [turned it into a plugin](https://github.com/justinjmoses/node-keyboard-rx)~~
 
 ###FAQ
 
