@@ -7,11 +7,11 @@ A REPL where music is simply streams of input in node. Uses the awesome soundfon
 ![](https://media.giphy.com/media/l0MYPIsEjIrUFYNs4/giphy.gif)
 
 ##Install via
-
     npm install -g node-keyboard
 
-##Run via
+> **Note: Installing node-keyboard will clone a soundfont library during install, resulting in an 800MB download.**
 
+##Run via
     node-keyboard
 
 ##Examples
