@@ -14,6 +14,9 @@ A REPL where music is simply streams of input in node. Uses the awesome soundfon
 
     node-keyboard
 
+##Examples
+Inside the REPL, the examples in the example folder are loaded as getters with the prefix `example_`. E.g. `example_01_scales.chromatic({ key: 'b', ms: 100 })`
+
 ##Streaming Functionality tl;dr
 
 * [MIDI In](#midi-in) support by `midiIn`, pipe to audio via `.pipe(toAudio)`

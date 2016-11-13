@@ -29,6 +29,7 @@
     "git-clone": "0.1.0",
     "lodash.shuffle": "^4.2.0",
     "midi": "^0.9.5",
+    "node-examples": "^1.0.0",
     "play-sound": "^1.1.1",
     "robotjs": "^0.4.4",
     "rxjs": "^5.0.0-rc.2",
