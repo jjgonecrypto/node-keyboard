@@ -187,6 +187,7 @@ guitar.pipe(on()).pipe(toAudio) // won't play the guitar stream's final on() is 
 * ~~`3.5.0` Support for `only()`~~
 * ~~`3.6.0` Subscription removal on SIGINT for Rx, support for `piano` function, support for `runInThisContext`, and stream getter bugfix~~
 * ~~`3.7.0` Support for `log` function, removal of `runInThisContext` (not necessary)~~
+* ~~`3.8.0` Errors no longer thrown, just shown. Support for examples~~
 
 ###FAQ
 
