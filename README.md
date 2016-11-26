@@ -151,13 +151,10 @@ Eg.
 scale(c, 'major').filter(only(1,3,5,7)).map(play) // Cmaj7
 ```
 
--------
-
 ##Plugins
 
-* RxJS support and examples at https://github.com/justinjmoses/node-keyboard-rx
-
--------
+* RxJS support and examples via [node-keyboard-rx](https://github.com/justinjmoses/node-keyboard-rx)
+* Mouse support (OSX only) at [node-keyboard-mouse](https://github.com/justinjmoses/node-keyboard-mouse)
 
 ##Known Issues
 * Reusing a stream and repiping it through transformers
@@ -174,6 +171,9 @@ guitar.pipe(on()).pipe(toAudio) // won't play the guitar stream's final on() is 
 ```
 
 -------
+
+##More info
+I spoke on node-keyboard at EmpireNode in November 2016 [![image](https://cloud.githubusercontent.com/assets/799038/20642823/a3e35b44-b3e7-11e6-9b1c-a358270daedf.png)](https://youtu.be/Wa5-DePTWdA?t=522 )
 
 ##Changelog
 
