@@ -5,7 +5,8 @@ const playEvery = ms => {
 }
 
 module.exports = {
-    // play notes on a random instrument via random({ notes: [c, e, g] })
+    // play notes on a random instrument
+    // example_04_instruments.random({ notes: [c, e, g] })
     random({ notes = [], ms = 250 } = { }) {
         notes.map(instrument()).forEach(playEvery(ms))
     }

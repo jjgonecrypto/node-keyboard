@@ -5,6 +5,8 @@ const playEvery = ms => {
 }
 
 module.exports = {
+    // Arpeggio a chord
+    // example_02_chords.arpeggio({ chordName: 'c9' })
     arpeggio({ chordName, ms = 250 }) {
         const notesInChord = chord(chordName)
         if (!notesInChord.length) return

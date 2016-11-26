@@ -5,7 +5,6 @@ const { from, on, delay } = streams
 const midi = require('../lib/midi')
 
 module.exports = () => {
-
     // banjo loop
     from('c','e','g').pipe(delay(400)).pipe(on('banjo')).pipe(streams.toAudio)
 

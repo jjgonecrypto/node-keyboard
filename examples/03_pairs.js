@@ -5,12 +5,14 @@ const playEvery = ms => {
 }
 
 module.exports = {
-    // Play thirds over some notes, eg. thirds({ notes: [c, e, g] })
+    // Play thirds over some notes, eg.
+    // example_03_pairs.thirds({ notes: [c, e, g] })
     thirds({ notes = [], ms = 250 } = {}) {
         notes.map(interval('P1','m3')).forEach(playEvery(ms))
     },
 
-    // Play fifths over some notes, eg. fifths({ notes: [c1, c2, c3, c4], ms: 500 })
+    // Play fifths over some notes
+    // example_03_pairs.fifths({ notes: [c1, c2, c3, c4], ms: 500 })
     fifths({ notes = [], ms = 250 } = {}) {
         notes.map(interval('P1','P5')).forEach(playEvery(ms))
     }
