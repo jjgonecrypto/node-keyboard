@@ -1,5 +1,7 @@
 #node-keyboard
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/justinjmoses/node-keyboard.svg)](https://greenkeeper.io/)
+
 [![npm version](https://badge.fury.io/js/node-keyboard.svg)](https://badge.fury.io/js/node-keyboard)
 
 A REPL where music is simply streams of input in node. Uses the awesome soundfonts of [midi-js-soundfonts](https://github.com/gleitz/midi-js-soundfonts). Supports optional MIDI input.
