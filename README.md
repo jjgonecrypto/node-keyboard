@@ -156,6 +156,7 @@ scale(c, 'major').filter(only(1,3,5,7)).map(play) // Cmaj7
 * RxJS support and examples via [node-keyboard-rx](https://github.com/justinjmoses/node-keyboard-rx)
 * Mouse support (OSX only) at [node-keyboard-mouse](https://github.com/justinjmoses/node-keyboard-mouse)
 * Twitter support at [node-keyboard-twitter](https://github.com/justinjmoses/node-keyboard-twitter)
+* MongoDB support at [node-keyboard-mongo](https://github.com/justinjmoses/node-keyboard-mongo)
 
 ##Known Issues
 * Reusing a stream and repiping it through transformers
