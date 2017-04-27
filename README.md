@@ -1,4 +1,4 @@
-#node-keyboard
+# node-keyboard
 
 [![npm version](https://badge.fury.io/js/node-keyboard.svg)](https://badge.fury.io/js/node-keyboard)
 
@@ -6,25 +6,25 @@ A REPL where music is simply streams of input in node. Uses the awesome soundfon
 
 ![](https://media.giphy.com/media/l0MYPIsEjIrUFYNs4/giphy.gif)
 
-##Install via
+## Install via
     npm install -g node-keyboard
 
 > **Note: Installing node-keyboard will clone a soundfont library during install, resulting in an 800MB download.**
 
-##Run via
+## Run via
     node-keyboard
 
-##Examples
+## Examples
 Inside the REPL, the examples in the example folder are loaded as getters with the prefix `example_`. E.g. `example_01_scales.chromatic({ key: 'b', ms: 100 })`
 
-##Streaming Functionality tl;dr
+## Streaming Functionality tl;dr
 
 * [MIDI In](#midi-in) support by `midiIn`, pipe to audio via `.pipe(toAudio)`
 * [Create a stream](#create-a-stream) of notes using `from`
 * [Delay playing](#delay) across a cycle of intervals via `.pipe(delay(...))`
 * [Select instrument](#with-instrument) or play with a random one via `.pipe(on(...))`
 
-###MIDI In
+### MIDI In
 Pipe the `midiIn` stream to a number of writable outputs. (*To function, your MIDI device must be on when node starts.*)
 
 `toAudio` will play the notes
@@ -58,7 +58,7 @@ And remove from MIDI input via `midiIn.unpipe()` (or `CTRL`+`C`)
 
 ![node-keyboard](https://cloud.githubusercontent.com/assets/799038/20159751/b75032b8-a6b0-11e6-92ed-6b91814647f3.gif)
 
-###Create a Stream
+### Create a Stream
 Create an [infinite] stream of notes from an array using `from` (supports notes as variables).
 
 ```javascript
@@ -67,14 +67,14 @@ from(c, e, g).pipe(toAudio) // Hit CTRL+C (SIGINT) to unpipe immediately
 
 > Note: supports all notes A0 to Cs8/Db8 (Cs8 is the syntax-friendly version of 'C#8')
 
-###Delay
+### Delay
 Use `delay(...args)` to return a transform stream that will emit after the given delays (where the delays are cycled)
 
 ```javascript
 from(c1, g1, c2, g2, c3, g3).pipe(delay(250, 250, 500)).pipe(toAudio)
 ```
 
-###With Instrument
+### With Instrument
 Use `on(instrument)` to return a transform stream that will ensure the given instrument is used.
 
 ```javascript
@@ -83,10 +83,10 @@ from(c,e,g).pipe(on('guitar')).pipe(delay(200)).pipe(toAudio)
 
 > Note: Breaking via CTRL+C will stop the stream by unpiping **everything**
 
-##Functionality (sans streams)
+## Functionality (sans streams)
 Functionality, without the streams.
 
-###Properties
+### Properties
 * `instruments` list all instruments available
 * `scales` list all scales supported
 
@@ -109,8 +109,8 @@ Eg.
 [f,a,c].map(play).forEach(log)
 ```
 
-###Projections
-* `chord(name)` projects a chord name out to an array of notes. 
+### Projections
+* `chord(name)` projects a chord name out to an array of notes.
 Eg.
 ```javascript
 chord('cm9')
@@ -131,15 +131,15 @@ sequence(c, 2, 1, 2, 2, 1, 2, 2) // c minor scale
 // [ 'c3', 'd3', 'eb3', 'f3', 'g3', 'g#3', 'a#3', 'c4' ]
 ```
 
-###Functors
+### Functors
 * `instrument([name]])` returns mapping function to play on instrument. If no parameter provided it chooses a random instrument.
-Eg.: 
+Eg.:
 ```javascript
 [c,e,g].map(instrument('guitar')).forEach(play)
 ```
 
 * `interval(...intervals)` returns mapping function to project intervals.
-Eg. 
+Eg.
 ```javascript
 [c,e,g].map(interval('P1','P5')).reduce((acc, cur) => acc.concat(cur), [])
 // [ 'c3', 'g3', 'e3', 'b3', 'g3', 'd4' ]
@@ -151,19 +151,20 @@ Eg.
 scale(c, 'major').filter(only(1,3,5,7)).map(play) // Cmaj7
 ```
 
-##Plugins
+## Plugins
 
 * RxJS support and examples via [node-keyboard-rx](https://github.com/justinjmoses/node-keyboard-rx)
 * Mouse support (OSX only) at [node-keyboard-mouse](https://github.com/justinjmoses/node-keyboard-mouse)
 * Twitter support at [node-keyboard-twitter](https://github.com/justinjmoses/node-keyboard-twitter)
 * MongoDB support at [node-keyboard-mongo](https://github.com/justinjmoses/node-keyboard-mongo)
+* Object to chords - shape mappings at [node-keyboard-shapes](https://github.com/justinjmoses/node-keyboard-shapes)
 
-##Known Issues
+## Known Issues
 * Reusing a stream and repiping it through transformers
-E.g. 
+E.g.
 ```javascript
 let guitar = from(c,e,g).pipe(on('guitar')).pipe(delay(200))
-guitar.pipe(toAudio) 
+guitar.pipe(toAudio)
 // CTRL+C
 guitar.pipe(toAudio) // works
 // CTRL+C
@@ -174,10 +175,10 @@ guitar.pipe(on()).pipe(toAudio) // won't play the guitar stream's final on() is 
 
 -------
 
-##More info
+## More info
 I spoke on node-keyboard at EmpireNode in November 2016 [![image](https://cloud.githubusercontent.com/assets/799038/20642823/a3e35b44-b3e7-11e6-9b1c-a358270daedf.png)](https://youtu.be/Wa5-DePTWdA?t=522 )
 
-##Changelog
+## Changelog
 
 * ~~(see [commit log](https://github.com/justinjmoses/node-keyboard/commits/master) for earlier releases)~~
 * ~~`2.5.0` Support for switching instruments~~
@@ -198,7 +199,7 @@ I spoke on node-keyboard at EmpireNode in November 2016 [![image](https://cloud.
 * ~~`3.8.0` Errors no longer thrown, just shown. Support for examples~~
 * ~~`3.9.0` Removed Rx support and [turned it into a plugin](https://github.com/justinjmoses/node-keyboard-rx)~~
 
-###FAQ
+### FAQ
 
 1. When no octave is provided (e.g. `play(a)`) then 3rd octave (`a3` 220Hz) (starting at `c3` on an 8-octave piano) is the default.
 
@@ -206,7 +207,7 @@ I spoke on node-keyboard at EmpireNode in November 2016 [![image](https://cloud.
 
 3. Sharp can be denoated by `s` when not surrounding note by strings (i.e. `as4 ==== 'a#4')`. Double-sharp is denoted with `x` as in `ax3` (enharmonically `b3`). Double-flat is denoted with `bb` as in `bbb3` (enharmonically `a3`)
 
-###Acknowledgements
+### Acknowledgements
 
 * The fantastic [midi-js-soundfonts](https://github.com/gleitz/midi-js-soundfonts) library for all the underlying recordings
 * The stunning [teoria library](https://github.com/saebekassebil/teoria) for note, chord and scale support
