@@ -32,6 +32,6 @@
     "node-examples": "^1.0.0",
     "play-sound": "^1.1.1",
     "robotjs": "^0.4.4",
-    "teoria": "2.2.0"
+    "teoria": "2.3.0"
   }
 }
