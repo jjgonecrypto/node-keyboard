@@ -28,7 +28,7 @@
     "chalk": "1.1.3",
     "git-clone": "0.1.0",
     "lodash.shuffle": "^4.2.0",
-    "midi": "^0.9.5",
+    "midi": "^1.0.0",
     "node-examples": "^1.0.0",
     "play-sound": "^1.1.1",
     "robotjs": "^0.4.4",
